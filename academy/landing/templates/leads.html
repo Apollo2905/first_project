@@ -1,0 +1,28 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+    </div>
+    <section class="section is-medium has-background-success">
+        <div class="container">
+            <div class="title is-2 has-text-centered is-capitalized"> Карточки лидов</div>
+            <div class="columns">
+                {% for lead in leads %}
+                    <div class="column">
+                            <div class="box has-text-centered">
+                                <div class="subtitle is-spaced has-text-black">
+                                    {{ lead.name }} {{ lead.last_name }}
+                                </div>
+                                <div class="content has-text-centered">
+                                    {{ lead.phone_number }}
+                                </div>
+                                <div class="content has-text-centered">
+                                    {{ lead.course }}
+                                </div>
+                            </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
